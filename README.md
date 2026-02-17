@@ -1,90 +1,177 @@
-Professional Calculator Command-Line Application
-Overview
-This project is a modular command-line calculator developed in Python using object-oriented programming principles.
-It supports arithmetic operations, maintains calculation history, includes full unit testing, and uses GitHub Actions to enforce 100% test coverage.
-The goal of this assignment is to demonstrate:
-Clean project architecture
-Error handling strategies (LBYL & EAFP)
-Automated testing with pytest
-Continuous integration with GitHub Actions
-Features
-Calculator Functionality
-Addition, subtraction, multiplication, and division
-Division-by-zero error handling
-Input validation for numeric values
-REPL Interface
-Continuous Read-Eval-Print Loop
-Built-in commands:
-help → shows usage instructions
-history → displays previous calculations
-exit → quits the program
-Software Engineering Practices
-Modular folder structure
-DRY principle and reusable classes
-Calculation data model with computation logic
-CalculationFactory for creating calculation objects
-Testing & Coverage
-Unit tests written using pytest
-Parameterized tests for multiple input cases
-Edge cases tested:
-Invalid numbers
-Unsupported operations
-Division by zero
-100% test coverage achieved using pytest-cov
-Continuous Integration (CI)
-GitHub Actions automatically:
-Installs dependencies
-Runs all tests
-Checks coverage ≥ 100%
-Fails the build if coverage drops
-This ensures code quality on every push.
-Project Structure
-app/
- ├── calculation/
- │    ├── calculation.py
- │    └── factory.py
- ├── calculator/
- │    └── repl.py
- ├── operation/
- │    └── operations.py
- └── main.py
+Absolutely—here is a **professional README template** similar to the one in the repository you linked (from *ageethikachowdary1/professional_calculator_application*) but customized for **your project**.
 
-tests/
- ├── test_calculations.py
- ├── test_operations.py
- ├── test_repl.py
- └── test_main.py
-Setup Instructions
-1. Clone the repository
+You can copy-paste this directly into a `README.md` file in your repo.
+
+---
+
+# **Professional Calculator Application**
+
+A command-line calculator application built in Python, demonstrating object-oriented design, unit testing with pytest, and continuous integration with GitHub Actions.
+
+This project supports arithmetic operations, handles invalid input, maintains calculation history, and enforces 100% test coverage.
+
+---
+
+## 🚀 Features
+
+✔ Add, Subtract, Multiply, Divide
+✔ Handles division-by-zero errors
+✔ REPL (interactive console)
+✔ History of performed calculations
+✔ Full unit tests with pytest
+✔ Continuous integration using GitHub Actions
+✔ 100% test coverage enforced
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology     | Purpose                |
+| -------------- | ---------------------- |
+| Python         | Programming language   |
+| pytest         | Testing framework      |
+| pytest-cov     | Coverage reporting     |
+| GitHub Actions | Continuous integration |
+| dataclasses    | Structured data model  |
+
+---
+
+## 📁 Project Structure
+
+```
+module4-calculator/
+├── app/
+│   ├── calculation/
+│   │   ├── calculation.py
+│   │   └── factory.py
+│   ├── calculator/
+│   │   └── repl.py
+│   ├── operation/
+│   │   └── operations.py
+│   └── main.py
+├── tests/
+│   ├── test_calculations.py
+│   ├── test_operations.py
+│   ├── test_repl.py
+│   └── test_main.py
+├── .github/
+│   └── workflows/
+│       └── python-app.yml
+├── .venv/
+├── pyproject.toml
+└── README.md
+```
+
+---
+
+## 📥 Installation
+
+1. Clone the repository:
+
+```bash
 git clone https://github.com/kavyareddypodduturi/module4-calculator.git
 cd module4-calculator
-2. Create virtual environment
+```
+
+2. Create and activate a virtual environment:
+
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
-3. Install dependencies
+```
+
+3. Install dependencies:
+
+```bash
 pip install pytest pytest-cov
-Running the Calculator
+```
+
+---
+
+## ▶️ Running the Application
+
+Run the calculator in REPL mode:
+
+```bash
 python -m app.main
-Example usage:
-> add 2 3
-5.0
+```
+
+Example commands inside the REPL:
+
+```
+> add 10 5
+15.0
+
+> multiply 2 3
+6.0
 
 > history
-add 2.0 3.0 = 5.0
-Running Tests
+add 10.0 5.0 = 15.0
+multiply 2.0 3.0 = 6.0
+
+> exit
+Goodbye!
+```
+
+---
+
+## 🔍 Testing
+
+Run all tests:
+
+```bash
 pytest
-Coverage must show:
+```
+
+Combined with coverage:
+
+```bash
+pytest --cov=app --cov-branch
+```
+
+Expected coverage report:
+
+```
 TOTAL coverage: 100%
-Learning Outcomes
-This project demonstrates:
-Object-oriented programming in Python
-Clean modular design
-Robust error handling
-Automated testing and CI pipelines
-> Technologies Used
+```
 
-Python, pytest, pytest-cov, Git, GitHub, GitHub Actions
+---
 
-License
+## 📦 GitHub Actions (CI)
 
-This project is developed for academic purposes as part of coursework
+This project uses a GitHub Actions workflow (`.github/workflows/python-app.yml`) to:
+
+✔ Install dependencies
+✔ Run tests
+✔ Check coverage
+✔ Fail the build if coverage < 100%
+
+---
+
+## 💡 Usage Examples
+
+From the REPL:
+
+```
+help
+history
+add 2 3
+divide 10 2
+multiply 5 6
+```
+
+---
+
+## 🧠 Notes
+
+* Error handling is implemented using both LBYL (Look Before You Leap) and EAFP (Easier to Ask Forgiveness than Permission).
+* The `CalculationFactory` implements a factory pattern to construct calculation objects.
+* History of calculations is stored in memory during REPL session.
+
+---
+
+
+## 📄 License
+
+This project is for educational purposes and does not include a specific license.
+
