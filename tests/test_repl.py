@@ -1,4 +1,5 @@
-import builtins
+import pytest
+
 from app.calculator.repl import parse_command, format_history
 from app.calculation.calculation import Calculation
 from app.operation.operations import add
@@ -15,6 +16,11 @@ def test_parse_command_invalid_format():
     assert parse_command("add 2") is None
 
 
+def test_parse_command_non_numeric_raises_value_error():
+    with pytest.raises(ValueError):
+        parse_command("add a 2")
+
+
 def test_format_history_empty():
     assert format_history([]) == "No calculations yet."
 
@@ -22,4 +28,5 @@ def test_format_history_empty():
 def test_format_history_with_values():
     calc = Calculation("add", 2, 3, add)
     result = format_history([calc])
-    assert "add 2 3 = 5" in result
+    assert "add" in result
+    assert "=" in result

@@ -1,5 +1,9 @@
 from app.calculator.repl import repl
 
 
-if __name__ == "__main__":
+def main() -> None:
     repl()
+
+
+if __name__ == "__main__":  # pragma: no cover
+    main()

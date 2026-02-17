@@ -1,9 +1,8 @@
-import runpy
 from unittest.mock import patch
+from app import main
 
 
 def test_main_calls_repl():
     with patch("app.main.repl") as repl_mock:
-        runpy.run_module("app.main", run_name="__main__")
+        main.main()
         repl_mock.assert_called_once()
-

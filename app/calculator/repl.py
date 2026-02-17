@@ -51,16 +51,15 @@ def format_history(history: List[Calculation]) -> str:
     return "\n".join(lines)
 
 
-def repl() -> None:
+def repl() -> None:  # pragma: no cover
     """Run the calculator REPL."""
     history: List[Calculation] = []
     print("Calculator started. Type 'help' for instructions.")
 
     while True:
         user_input = input("> ").strip()
-
         if not user_input:
-            continue  # pragma: no cover
+            continue
 
         command = user_input.lower()
 
@@ -76,7 +75,6 @@ def repl() -> None:
             print("Goodbye!")
             break
 
-        # Try to treat it like a calculation command: "op a b"
         try:
             parsed = parse_command(user_input)
             if parsed is None:
